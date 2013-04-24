@@ -95,20 +95,20 @@ dd{margin-left:2em;margin-bottom:1em;}
 
 <p>PDFTouch SDK is already built and packaged as a module that you can install right away. If you make any changes to the module code, you will need to repeat the build and install steps.</p>
 
-<p>Copy the com.yakamozlabs.pdftouch-iphone-2.0.zip file to the Titanium directory by running the following line in the terminal:</p>
+<p>Copy the com.yakamozlabs.pdftouch-iphone-2.1.zip file to the Titanium directory by running the following line in the terminal:</p>
 
-<pre><code>$ cp com.yakamozlabs.pdftouch-iphone-2.0.zip ~/Library/Application\ Support/Titanium
+<pre><code>$ cp com.yakamozlabs.pdftouch-iphone-2.1.zip ~/Library/Application\ Support/Titanium
 </code></pre>
 
 <p>The Titanium compiler will automatically expand the module into the correct directory when referenced in your application. The PDFTouch module will be expanded into the following directory:</p>
 
-<pre><code>~/Library/Application Support/Titanium/modules/iphone/com.yakamozlabs.pdftouch/2.0
+<pre><code>~/Library/Application Support/Titanium/modules/iphone/com.yakamozlabs.pdftouch/2.1
 </code></pre>
 
 <p>Once the module is installed you can use it in your Titanium application project. Open your projects' <strong>tiapp.xml</strong> file and add the following lines at the end:</p>
 
 <pre><code>&lt;modules&gt;
-    &lt;module version="2.0"&gt;com.yakamozlabs.pdftouch&lt;/module&gt;
+    &lt;module version="2.1"&gt;com.yakamozlabs.pdftouch&lt;/module&gt;
 &lt;/modules&gt;
 </code></pre>
 
@@ -146,7 +146,19 @@ var document = pdftouch.createPDFDocument(f.nativePath);
 <li><strong>removeBookmarkForPage(page)</strong> - Removes bookmark for the passed in page. Returns a boolean value indicating wether the bookmark was removed.</li>
 <li><strong>hasBookmarkForPage(page)</strong> - Returns a boolean indicating wether the passed in page is bookmarked.</li>
 <li><strong>bookmarkedPageNumbers()</strong> - Returns an array with all bookmarked page numbers.</li>
-<li><strong>display()</strong> - This function will present the PDF view controller as a modal view controller.</li>
+<li><p><strong>metadataForKey(key)</strong> - Returns a string value for the requested metadata key. The key parameter can have the following values:</p>
+
+<pre><code>  Title
+  Author
+  Subject
+  Keywords
+  Creator
+  Producer
+  CreationDate
+  ModDate
+  Version
+</code></pre></li>
+<li><p><strong>display()</strong> - This function will present the PDF view controller as a modal view controller.</p></li>
 <li><strong>showToolbarsAnimated(animated)</strong> - Show toolbars in PDF view controller.</li>
 <li><strong>hideToolbarsAnimated(animated)</strong> - Hide toolbars in PDF view controller.</li>
 <li><strong>toggleToolbarsAnimated(animated)</strong> - Toggle toolbars in PDF view controller.</li>
@@ -176,6 +188,10 @@ var document = pdftouch.createPDFDocument(f.nativePath);
 <li><strong>setPageCurlEnabled(enabled)</strong> - Enables or disables page curl.</li>
 <li><strong>autoLayoutEnabled()</strong> - Returns a boolean value indicating wether auto layout is enabled.</li>
 <li><strong>setAutoLayoutEnabled(enabled)</strong> - Enables or disabled auto layout. Please note that you can enable auto layout only when double page mode is active!</li>
+<li><strong>dismissButtonText()</strong> - Returns the text of the dismiss button.</li>
+<li><strong>setDismissButtonText(text)</strong> - Sets the text of the dismiss button.</li>
+<li><strong>hideDismissButton()</strong> - Returns a boolean value indicating wether the dismiss button is hidden.</li>
+<li><strong>setHideDismissButton(hide)</strong> - Sets the visibility of the dismiss button.</li>
 </ul>
 
 
@@ -238,6 +254,35 @@ if(document.isValidPDF()) {
 <ul>
 <li>New search engine that works with all font types.</li>
 <li>Improved page rendering technique that prevents blurry text in some PDF files.</li>
+</ul>
+
+
+<h4>Release Date: 03/27/2013 - Version: 2.0.1</h4>
+
+<ul>
+<li>Improved the text highlighting implementation used to highlight search results.</li>
+<li>Fixed text highlighting bug for composite fonts.</li>
+<li>Added support for external CMAP files which are used by some PDF files for Korean, Chinese and Japanese languages.</li>
+<li>Added support to query metadata embedded in the PDF file. Supported metadata keys are: title, author, subject, keywords, creator, producer, creation date, modification date and PDF version.</li>
+</ul>
+
+
+<h4>Release Date: 04/24/2013 - Version: 2.1</h4>
+
+<ul>
+<li>Fixed missing metadata implementation.</li>
+<li>Fixed display issues of PDF files which have different page sizes.</li>
+<li>Fixed 1 pixel jump when zoomed in.</li>
+<li>Fixed bug in composite font text extraction.</li>
+<li>Fixed bug in parsing width array of composite fonts.</li>
+<li>Improved search performance for the standard 14 fonts.</li>
+<li>Fixed bug in YLCache that would crash when removing KVO observers twice.</li>
+<li>Added new properties to hide dismiss button, change it’s text and style.</li>
+<li>Fixed annotation rectangle calculation bug.￼</li>
+<li>Hide popover on iPad when switching to thumbnails mode.</li>
+<li>Added search support for PDF files that use a global “Resources” dictionary.</li>
+<li>Prevent too small thumbnail calculations for PDF files with unusual page sizes.</li>
+<li>Display the correct page when switching from double page landscape mode to single page portrait mode.</li>
 </ul>
 
 
