@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <style>
 *{margin:0;padding:0;}
 body {
@@ -95,20 +95,20 @@ dd{margin-left:2em;margin-bottom:1em;}
 
 <p>PDFTouch SDK is already built and packaged as a module that you can install right away. If you make any changes to the module code, you will need to repeat the build and install steps.</p>
 
-<p>Copy the com.yakamozlabs.pdftouch-iphone-2.1.1.zip file to the Titanium directory by running the following line in the terminal:</p>
+<p>Copy the com.yakamozlabs.pdftouch-iphone-2.1.2.zip file to the Titanium directory by running the following line in the terminal:</p>
 
-<pre><code>$ cp com.yakamozlabs.pdftouch-iphone-2.1.1.zip ~/Library/Application\ Support/Titanium
+<pre><code>$ cp com.yakamozlabs.pdftouch-iphone-2.1.2.zip ~/Library/Application\ Support/Titanium
 </code></pre>
 
 <p>The Titanium compiler will automatically expand the module into the correct directory when referenced in your application. The PDFTouch module will be expanded into the following directory:</p>
 
-<pre><code>~/Library/Application Support/Titanium/modules/iphone/com.yakamozlabs.pdftouch/2.1.1
+<pre><code>~/Library/Application Support/Titanium/modules/iphone/com.yakamozlabs.pdftouch/2.1.2
 </code></pre>
 
 <p>Once the module is installed you can use it in your Titanium application project. Open your projects' <strong>tiapp.xml</strong> file and add the following lines at the end:</p>
 
 <pre><code>&lt;modules&gt;
-    &lt;module version="2.1.1"&gt;com.yakamozlabs.pdftouch&lt;/module&gt;
+    &lt;module version="2.1.2"&gt;com.yakamozlabs.pdftouch&lt;/module&gt;
 &lt;/modules&gt;
 </code></pre>
 
@@ -295,6 +295,15 @@ if(document.isValidPDF()) {
 <li>Stop video playback when switching to thumbnail mode.</li>
 <li>Fixed video playback issues when switching to fullscreen and back.</li>
 <li>Fixed backwards page flipping animation glitches.</li>
+</ul>
+
+
+<h4>Release Date: 06/21/2013 - Version: 2.1.2</h4>
+
+<ul>
+<li>Fixed KVO removing bug in YLPDFViewController.</li>
+<li>Fixed text highlighting issues for some fonts.</li>
+<li>Fixed memory related bug in outline parser.</li>
 </ul>
 
 
