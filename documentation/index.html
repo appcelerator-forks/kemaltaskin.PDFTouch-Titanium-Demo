@@ -89,26 +89,26 @@ dd{margin-left:2em;margin-bottom:1em;}
 
 <p>PDFTouch SDK offers you a solid framework that's easy to use and customize to your needs. With just a couple of lines of code you can create a PDF view controller and present it in your app! The user interface is very similar to the iBooks app and also features a grid display for page thumbnails.</p>
 
-<p>This module is created with Appcelerator mobile sdk version 2.0.1.GA2.</p>
+<p>This module is created with Appcelerator mobile sdk version 2.0.1.GA2. The latest version is built using Appcelerator mobile sdk version 3.1.3GA.</p>
 
 <h2>Installation</h2>
 
 <p>PDFTouch SDK is already built and packaged as a module that you can install right away. If you make any changes to the module code, you will need to repeat the build and install steps.</p>
 
-<p>Copy the com.yakamozlabs.pdftouch-iphone-2.1.2.zip file to the Titanium directory by running the following line in the terminal:</p>
+<p>Copy the com.yakamozlabs.pdftouch-iphone-2.2.zip file to the Titanium directory by running the following line in the terminal:</p>
 
-<pre><code>$ cp com.yakamozlabs.pdftouch-iphone-2.1.2.zip ~/Library/Application\ Support/Titanium
+<pre><code>$ cp com.yakamozlabs.pdftouch-iphone-2.2.zip ~/Library/Application\ Support/Titanium
 </code></pre>
 
 <p>The Titanium compiler will automatically expand the module into the correct directory when referenced in your application. The PDFTouch module will be expanded into the following directory:</p>
 
-<pre><code>~/Library/Application Support/Titanium/modules/iphone/com.yakamozlabs.pdftouch/2.1.2
+<pre><code>~/Library/Application Support/Titanium/modules/iphone/com.yakamozlabs.pdftouch/2.2
 </code></pre>
 
 <p>Once the module is installed you can use it in your Titanium application project. Open your projects' <strong>tiapp.xml</strong> file and add the following lines at the end:</p>
 
 <pre><code>&lt;modules&gt;
-    &lt;module version="2.1.2"&gt;com.yakamozlabs.pdftouch&lt;/module&gt;
+    &lt;module version="2.2"&gt;com.yakamozlabs.pdftouch&lt;/module&gt;
 &lt;/modules&gt;
 </code></pre>
 
@@ -304,6 +304,15 @@ if(document.isValidPDF()) {
 <li>Fixed KVO removing bug in YLPDFViewController.</li>
 <li>Fixed text highlighting issues for some fonts.</li>
 <li>Fixed memory related bug in outline parser.</li>
+</ul>
+
+
+<h4>Release Date: 09/27/2013 - Version: 2.2</h4>
+
+<ul>
+<li>iOS 7 compatibility.</li>
+<li>Fixed search for PDF files which use a global font resources dictionary.</li>
+<li>Fixed a search related bug for PDF files which use external CMAP files.</li>
 </ul>
 
 
