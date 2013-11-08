@@ -95,20 +95,20 @@ dd{margin-left:2em;margin-bottom:1em;}
 
 <p>PDFTouch SDK is already built and packaged as a module that you can install right away. If you make any changes to the module code, you will need to repeat the build and install steps.</p>
 
-<p>Copy the com.yakamozlabs.pdftouch-iphone-2.2.zip file to the Titanium directory by running the following line in the terminal:</p>
+<p>Copy the com.yakamozlabs.pdftouch-iphone-2.2.1.zip file to the Titanium directory by running the following line in the terminal:</p>
 
-<pre><code>$ cp com.yakamozlabs.pdftouch-iphone-2.2.zip ~/Library/Application\ Support/Titanium
+<pre><code>$ cp com.yakamozlabs.pdftouch-iphone-2.2.1.zip ~/Library/Application\ Support/Titanium
 </code></pre>
 
 <p>The Titanium compiler will automatically expand the module into the correct directory when referenced in your application. The PDFTouch module will be expanded into the following directory:</p>
 
-<pre><code>~/Library/Application Support/Titanium/modules/iphone/com.yakamozlabs.pdftouch/2.2
+<pre><code>~/Library/Application Support/Titanium/modules/iphone/com.yakamozlabs.pdftouch/2.2.1
 </code></pre>
 
 <p>Once the module is installed you can use it in your Titanium application project. Open your projects' <strong>tiapp.xml</strong> file and add the following lines at the end:</p>
 
 <pre><code>&lt;modules&gt;
-    &lt;module version="2.2"&gt;com.yakamozlabs.pdftouch&lt;/module&gt;
+    &lt;module version="2.2.1"&gt;com.yakamozlabs.pdftouch&lt;/module&gt;
 &lt;/modules&gt;
 </code></pre>
 
@@ -313,6 +313,18 @@ if(document.isValidPDF()) {
 <li>iOS 7 compatibility.</li>
 <li>Fixed search for PDF files which use a global font resources dictionary.</li>
 <li>Fixed a search related bug for PDF files which use external CMAP files.</li>
+</ul>
+
+
+<h4>Release Date: 11/08/2013 - Version: 2.2.1</h4>
+
+<ul>
+<li>Added two new properties to YLPDFViewController that return a reference to the top and bottom toolbar.￼</li>
+<li>Added boolean properties to YLPDFViewController to enable/disable the search, outline and bookmark buttons.</li>
+<li>Added support for translations. The default (English) translation file is in PDFTouch.bundle’s en.lproj folder.</li>
+<li>Added search support for Chinese/Japanese/Korean PDF files that use multiple CMAP files.</li>
+<li>Auto-hide TOC button when there’s no TOC available in the PDF file.</li>
+<li>Boolean properties to enable/disable toolbar buttons will now update the toolbar on the fly.</li>
 </ul>
 
 
