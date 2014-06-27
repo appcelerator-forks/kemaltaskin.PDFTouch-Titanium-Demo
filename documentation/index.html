@@ -89,26 +89,26 @@ dd{margin-left:2em;margin-bottom:1em;}
 
 <p>PDFTouch SDK offers you a solid framework that's easy to use and customize to your needs. With just a couple of lines of code you can create a PDF view controller and present it in your app! The user interface is very similar to the iBooks app and also features a grid display for page thumbnails.</p>
 
-<p>This module is created with Appcelerator mobile sdk version 2.0.1.GA2. The latest version is built using Appcelerator mobile sdk version 3.1.3GA.</p>
+<p>This module is created with Appcelerator mobile sdk version 2.0.1.GA2. The latest version is built using Appcelerator mobile sdk version 3.2.3GA.</p>
 
 <h2>Installation</h2>
 
 <p>PDFTouch SDK is already built and packaged as a module that you can install right away. If you make any changes to the module code, you will need to repeat the build and install steps.</p>
 
-<p>Copy the com.yakamozlabs.pdftouch-iphone-2.2.1.zip file to the Titanium directory by running the following line in the terminal:</p>
+<p>Copy the com.yakamozlabs.pdftouch-iphone-2.3.zip file to the Titanium directory by running the following line in the terminal:</p>
 
-<pre><code>$ cp com.yakamozlabs.pdftouch-iphone-2.2.1.zip ~/Library/Application\ Support/Titanium
+<pre><code>$ cp com.yakamozlabs.pdftouch-iphone-2.3.zip ~/Library/Application\ Support/Titanium
 </code></pre>
 
 <p>The Titanium compiler will automatically expand the module into the correct directory when referenced in your application. The PDFTouch module will be expanded into the following directory:</p>
 
-<pre><code>~/Library/Application Support/Titanium/modules/iphone/com.yakamozlabs.pdftouch/2.2.1
+<pre><code>~/Library/Application Support/Titanium/modules/iphone/com.yakamozlabs.pdftouch/2.3
 </code></pre>
 
 <p>Once the module is installed you can use it in your Titanium application project. Open your projects' <strong>tiapp.xml</strong> file and add the following lines at the end:</p>
 
 <pre><code>&lt;modules&gt;
-    &lt;module version="2.2.1"&gt;com.yakamozlabs.pdftouch&lt;/module&gt;
+    &lt;module version="2.3"&gt;com.yakamozlabs.pdftouch&lt;/module&gt;
 &lt;/modules&gt;
 </code></pre>
 
@@ -122,6 +122,25 @@ dd{margin-left:2em;margin-bottom:1em;}
 </code></pre>
 
 <p>The pdftouch variable now holds a reference to the Module object.</p>
+
+<h2>Events</h2>
+
+<p>The pdftouch module fires several events to notify you about page and document changes. You should handle these events like this:</p>
+
+<pre><code>        document.addEventListener('did_display_document', function(e) {
+            Ti.API.log("Did display document");
+        });
+
+        document.addEventListener('will_dismiss_document', function(e) {
+            Ti.API.log("Will dismiss document");
+        });
+
+        document.addEventListener('page_changed', function(e) {
+            if(e.page !== undefined) {
+                Ti.API.log("Page changed: " + e.page);
+            }
+        });
+</code></pre>
 
 <h2>Reference</h2>
 
@@ -158,6 +177,12 @@ var document = pdftouch.createPDFDocument(f.nativePath);
   ModDate
   Version
 </code></pre></li>
+<li><p><strong>cachingBehavior()</strong> - Returns the caching behavior.</p>
+
+<pre><code>  0 = caching enabled
+  1 = caching disabled
+</code></pre></li>
+<li><p><strong>setCachingBehavior(behavior)</strong> - Set document caching behavior. The <strong>behavior</strong> parameter should be either 0 or 1. Set this value to 1 if you want to completely disable caching of PDF pages to the filesystem.</p></li>
 <li><p><strong>display()</strong> - This function will present the PDF view controller as a modal view controller.</p></li>
 <li><strong>showToolbarsAnimated(animated)</strong> - Show toolbars in PDF view controller.</li>
 <li><strong>hideToolbarsAnimated(animated)</strong> - Hide toolbars in PDF view controller.</li>
@@ -192,6 +217,11 @@ var document = pdftouch.createPDFDocument(f.nativePath);
 <li><strong>setDismissButtonText(text)</strong> - Sets the text of the dismiss button.</li>
 <li><strong>hideDismissButton()</strong> - Returns a boolean value indicating wether the dismiss button is hidden.</li>
 <li><strong>setHideDismissButton(hide)</strong> - Sets the visibility of the dismiss button.</li>
+<li><strong>setDocumentTitle(title)</strong> - Allows you to change the title that's displayed in the PDF view controller.</li>
+<li><strong>setContentPadding(padding)</strong> - Default value is 10. Use this property to change the padding around a PDF page view. This property should be set before the PDF view controller is displayed.</li>
+<li><strong>setShadowRadius(radius)</strong> - Default value is 4. Use this property to change the shadow radius around a PDF page view. This property should be set before the PDF view controller is displayed.</li>
+<li><strong>setShadowOffset(offset)</strong> - Default value is 1. Use this property to change the shadow offset around a PDF page view. This property should be set before the PDF view controller is displayed.</li>
+<li><strong>setShadowOpacity(opacity)</strong> - Default value is 0,8. Use this property to change the shadow opacity around a PDF page view. This property should be set before the PDF view controller is displayed.</li>
 </ul>
 
 
@@ -214,14 +244,14 @@ if(document.isValidPDF()) {
 
 <h2>Changelog</h2>
 
-<h4>Release Date: 10/12/2012 - Version: 1.0</h4>
+<h4>Release Date: 12/10/2012 - Version: 1.0</h4>
 
 <ul>
 <li>Initial Release.</li>
 </ul>
 
 
-<h4>Release Date: 10/22/2012 - Version: 1.1</h4>
+<h4>Release Date: 22/10/2012 - Version: 1.1</h4>
 
 <ul>
 <li>Fixed search related crash.</li>
@@ -229,7 +259,7 @@ if(document.isValidPDF()) {
 </ul>
 
 
-<h4>Release Date: 01/18/2013 - Version: 1.2</h4>
+<h4>Release Date: 18/01/2013 - Version: 1.2</h4>
 
 <ul>
 <li>Bookmark support.</li>
@@ -240,7 +270,7 @@ if(document.isValidPDF()) {
 </ul>
 
 
-<h4>Release Date: 02/11/2013 - Version: 1.3</h4>
+<h4>Release Date: 11/02/2013 - Version: 1.3</h4>
 
 <ul>
 <li>Fixed bug in PDF outline parser that would skip some entries with unicode characters.</li>
@@ -249,7 +279,7 @@ if(document.isValidPDF()) {
 </ul>
 
 
-<h4>Release Date: 03/14/2013 - Version: 2.0</h4>
+<h4>Release Date: 14/03/2013 - Version: 2.0</h4>
 
 <ul>
 <li>New search engine that works with all font types.</li>
@@ -257,7 +287,7 @@ if(document.isValidPDF()) {
 </ul>
 
 
-<h4>Release Date: 03/27/2013 - Version: 2.0.1</h4>
+<h4>Release Date: 27/03/2013 - Version: 2.0.1</h4>
 
 <ul>
 <li>Improved the text highlighting implementation used to highlight search results.</li>
@@ -267,7 +297,7 @@ if(document.isValidPDF()) {
 </ul>
 
 
-<h4>Release Date: 04/24/2013 - Version: 2.1</h4>
+<h4>Release Date: 24/04/2013 - Version: 2.1</h4>
 
 <ul>
 <li>Fixed missing metadata implementation.</li>
@@ -286,7 +316,7 @@ if(document.isValidPDF()) {
 </ul>
 
 
-<h4>Release Date: 05/14/2013 - Version: 2.1.1</h4>
+<h4>Release Date: 14/05/2013 - Version: 2.1.1</h4>
 
 <ul>
 <li>Fixed small bug in popover handling on iPad.</li>
@@ -298,7 +328,7 @@ if(document.isValidPDF()) {
 </ul>
 
 
-<h4>Release Date: 06/21/2013 - Version: 2.1.2</h4>
+<h4>Release Date: 21/06/2013 - Version: 2.1.2</h4>
 
 <ul>
 <li>Fixed KVO removing bug in YLPDFViewController.</li>
@@ -307,7 +337,7 @@ if(document.isValidPDF()) {
 </ul>
 
 
-<h4>Release Date: 09/27/2013 - Version: 2.2</h4>
+<h4>Release Date: 27/09/2013 - Version: 2.2</h4>
 
 <ul>
 <li>iOS 7 compatibility.</li>
@@ -316,7 +346,7 @@ if(document.isValidPDF()) {
 </ul>
 
 
-<h4>Release Date: 11/08/2013 - Version: 2.2.1</h4>
+<h4>Release Date: 08/11/2013 - Version: 2.2.1</h4>
 
 <ul>
 <li>Added two new properties to YLPDFViewController that return a reference to the top and bottom toolbar.￼</li>
@@ -328,12 +358,25 @@ if(document.isValidPDF()) {
 </ul>
 
 
+<h4>Release Date: 27/06/2014 - Version: 2.3</h4>
+
+<ul>
+<li>Removed the "ENSURE_UI_THREAD_0_ARGS" macro from methods that have a return value. This macro shouldn't be used in methods with a return value.</li>
+<li>Fixed page misalignment after selecting a search result (only occurred on the iPhone with page curl disabled).</li>
+<li>Fixed a bug in YLPageView's tiled layer that would cause a crash in some cases.</li>
+<li>Moved the four scrollview related defines in YLGlobal.h to YLPDViewController and refactored them into properties.</li>
+<li>Added a new “setDocumentTitle:” function to YLPDFViewController that allows you to change the title in the top toolbar.</li>
+<li>Added a new property to YLDocument to enable/disable caching.</li>
+<li>Added the "did_display_document", "will_dismiss_document" and "page_changed" events.</li>
+</ul>
+
+
 <h2>Author</h2>
 
 <p>Yakamoz Labs - info@yakamozlabs.com</p>
 
 <h2>License</h2>
 
-<p>Copyright 2013 Yakamoz Labs. Please refer to the LICENSE file to see the license.</p>
+<p>Copyright 2014 Yakamoz Labs. Please refer to the LICENSE file to see the license.</p>
 </body>
 </html>
