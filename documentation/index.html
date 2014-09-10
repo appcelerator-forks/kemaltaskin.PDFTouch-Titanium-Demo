@@ -89,26 +89,26 @@ dd{margin-left:2em;margin-bottom:1em;}
 
 <p>PDFTouch SDK offers you a solid framework that's easy to use and customize to your needs. With just a couple of lines of code you can create a PDF view controller and present it in your app! The user interface is very similar to the iBooks app and also features a grid display for page thumbnails.</p>
 
-<p>This module is created with Appcelerator mobile sdk version 2.0.1.GA2. The latest version is built using Appcelerator mobile sdk version 3.2.3GA.</p>
+<p>This module is created with Appcelerator mobile sdk version 2.0.1.GA2. The latest version is built using Appcelerator mobile sdk version 3.3.0GA.</p>
 
 <h2>Installation</h2>
 
 <p>PDFTouch SDK is already built and packaged as a module that you can install right away. If you make any changes to the module code, you will need to repeat the build and install steps.</p>
 
-<p>Copy the com.yakamozlabs.pdftouch-iphone-2.3.zip file to the Titanium directory by running the following line in the terminal:</p>
+<p>Copy the com.yakamozlabs.pdftouch-iphone-2.4.zip file to the Titanium directory by running the following line in the terminal:</p>
 
-<pre><code>$ cp com.yakamozlabs.pdftouch-iphone-2.3.zip ~/Library/Application\ Support/Titanium
+<pre><code>$ cp com.yakamozlabs.pdftouch-iphone-2.4.zip ~/Library/Application\ Support/Titanium
 </code></pre>
 
 <p>The Titanium compiler will automatically expand the module into the correct directory when referenced in your application. The PDFTouch module will be expanded into the following directory:</p>
 
-<pre><code>~/Library/Application Support/Titanium/modules/iphone/com.yakamozlabs.pdftouch/2.3
+<pre><code>~/Library/Application Support/Titanium/modules/iphone/com.yakamozlabs.pdftouch/2.4
 </code></pre>
 
 <p>Once the module is installed you can use it in your Titanium application project. Open your projects' <strong>tiapp.xml</strong> file and add the following lines at the end:</p>
 
 <pre><code>&lt;modules&gt;
-    &lt;module version="2.3"&gt;com.yakamozlabs.pdftouch&lt;/module&gt;
+    &lt;module version="2.4"&gt;com.yakamozlabs.pdftouch&lt;/module&gt;
 &lt;/modules&gt;
 </code></pre>
 
@@ -127,7 +127,11 @@ dd{margin-left:2em;margin-bottom:1em;}
 
 <p>The pdftouch module fires several events to notify you about page and document changes. You should handle these events like this:</p>
 
-<pre><code>        document.addEventListener('did_display_document', function(e) {
+<pre><code>        document.addEventListener('will_display_document', function(e) {
+            Ti.API.log("Will display document");
+        });
+
+        document.addEventListener('did_display_document', function(e) {
             Ti.API.log("Did display document");
         });
 
@@ -368,6 +372,14 @@ if(document.isValidPDF()) {
 <li>Added a new “setDocumentTitle:” function to YLPDFViewController that allows you to change the title in the top toolbar.</li>
 <li>Added a new property to YLDocument to enable/disable caching.</li>
 <li>Added the "did_display_document", "will_dismiss_document" and "page_changed" events.</li>
+</ul>
+
+
+<h4>Release Date: 10/09/2014 - Version: 2.4</h4>
+
+<ul>
+<li>Fixed a bug in the search code for Type1 fonts.</li>
+<li>Added new “pdfViewController:willDisplayDocument” delegate method.</li>
 </ul>
 
 
