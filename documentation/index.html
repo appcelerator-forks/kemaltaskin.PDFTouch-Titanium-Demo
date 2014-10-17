@@ -89,26 +89,26 @@ dd{margin-left:2em;margin-bottom:1em;}
 
 <p>PDFTouch SDK offers you a solid framework that's easy to use and customize to your needs. With just a couple of lines of code you can create a PDF view controller and present it in your app! The user interface is very similar to the iBooks app and also features a grid display for page thumbnails.</p>
 
-<p>This module is created with Appcelerator mobile sdk version 2.0.1.GA2. The latest version is built using Appcelerator mobile sdk version 3.3.0GA.</p>
+<p>This module is created with Appcelerator mobile sdk version 2.0.1.GA2. The latest version is built using Appcelerator mobile sdk version 3.4.0GA.</p>
 
 <h2>Installation</h2>
 
 <p>PDFTouch SDK is already built and packaged as a module that you can install right away. If you make any changes to the module code, you will need to repeat the build and install steps.</p>
 
-<p>Copy the com.yakamozlabs.pdftouch-iphone-2.4.zip file to the Titanium directory by running the following line in the terminal:</p>
+<p>Copy the com.yakamozlabs.pdftouch-iphone-2.5.zip file to the Titanium directory by running the following line in the terminal:</p>
 
-<pre><code>$ cp com.yakamozlabs.pdftouch-iphone-2.4.zip ~/Library/Application\ Support/Titanium
+<pre><code>$ cp com.yakamozlabs.pdftouch-iphone-2.5.zip ~/Library/Application\ Support/Titanium
 </code></pre>
 
 <p>The Titanium compiler will automatically expand the module into the correct directory when referenced in your application. The PDFTouch module will be expanded into the following directory:</p>
 
-<pre><code>~/Library/Application Support/Titanium/modules/iphone/com.yakamozlabs.pdftouch/2.4
+<pre><code>~/Library/Application Support/Titanium/modules/iphone/com.yakamozlabs.pdftouch/2.5
 </code></pre>
 
 <p>Once the module is installed you can use it in your Titanium application project. Open your projects' <strong>tiapp.xml</strong> file and add the following lines at the end:</p>
 
 <pre><code>&lt;modules&gt;
-    &lt;module version="2.4"&gt;com.yakamozlabs.pdftouch&lt;/module&gt;
+    &lt;module version="2.5"&gt;com.yakamozlabs.pdftouch&lt;/module&gt;
 &lt;/modules&gt;
 </code></pre>
 
@@ -217,7 +217,13 @@ var document = pdftouch.createPDFDocument(f.nativePath);
 <li><strong>setPageCurlEnabled(enabled)</strong> - Enables or disables page curl.</li>
 <li><strong>autoLayoutEnabled()</strong> - Returns a boolean value indicating wether auto layout is enabled.</li>
 <li><strong>setAutoLayoutEnabled(enabled)</strong> - Enables or disabled auto layout. Please note that you can enable auto layout only when double page mode is active!</li>
-<li><strong>dismissButtonText()</strong> - Returns the text of the dismiss button.</li>
+<li><strong>setHideStatusBar(hide)</strong> - Allows you to hide/show the status bar.</li>
+<li><p><strong>setStatusBarStyle(style)</strong> - Set status bar style. The style parameter should be either 0 or 1.</p>
+
+<pre><code>  0 = UIStatusBarStyleDefault
+  1 = UIStatusBarStyleLightContent
+</code></pre></li>
+<li><p><strong>dismissButtonText()</strong> - Returns the text of the dismiss button.</p></li>
 <li><strong>setDismissButtonText(text)</strong> - Sets the text of the dismiss button.</li>
 <li><strong>hideDismissButton()</strong> - Returns a boolean value indicating wether the dismiss button is hidden.</li>
 <li><strong>setHideDismissButton(hide)</strong> - Sets the visibility of the dismiss button.</li>
@@ -380,6 +386,18 @@ if(document.isValidPDF()) {
 <ul>
 <li>Fixed a bug in the search code for Type1 fonts.</li>
 <li>Added new “pdfViewController:willDisplayDocument” delegate method.</li>
+</ul>
+
+
+<h4>Release Date: 17/10/2014 - Version: 2.5</h4>
+
+<ul>
+<li>iOS 8 compatibility. PDFTouch SDK is now built with Xcode 6 and iOS SDK 8.0.</li>
+<li>Minimum deployment target is now 7.0.</li>
+<li>Refactored deprecated UIKit methods.</li>
+<li>Fixed memory issue in YLPageView.</li>
+<li>Added property to hide/show the status bar.</li>
+<li>Added property to change the status bar style.</li>
 </ul>
 
 
