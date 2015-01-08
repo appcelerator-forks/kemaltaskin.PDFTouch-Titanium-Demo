@@ -162,26 +162,26 @@ sup {
 
 <p>PDFTouch SDK offers you a solid framework that's easy to use and customize to your needs. With just a couple of lines of code you can create a PDF view controller and present it in your app! The user interface is very similar to the iBooks app and also features a grid display for page thumbnails.</p>
 
-<p>This module is created with Appcelerator mobile sdk version 2.0.1.GA2. The latest version is built using Appcelerator mobile sdk version 3.4.0GA.</p>
+<p>This module is created with Appcelerator mobile sdk version 2.0.1.GA2. The latest version is built using Appcelerator mobile sdk version 3.4.1GA.</p>
 
 <h2>Installation</h2>
 
 <p>PDFTouch SDK is already built and packaged as a module that you can install right away. If you make any changes to the module code, you will need to repeat the build and install steps.</p>
 
-<p>Copy the com.yakamozlabs.pdftouch-iphone-2.6.zip file to the Titanium directory by running the following line in the terminal:</p>
+<p>Copy the com.yakamozlabs.pdftouch-iphone-2.7.zip file to the Titanium directory by running the following line in the terminal:</p>
 
-<pre><code>$ cp com.yakamozlabs.pdftouch-iphone-2.6.zip ~/Library/Application\ Support/Titanium
+<pre><code>$ cp com.yakamozlabs.pdftouch-iphone-2.7.zip ~/Library/Application\ Support/Titanium
 </code></pre>
 
 <p>The Titanium compiler will automatically expand the module into the correct directory when referenced in your application. The PDFTouch module will be expanded into the following directory:</p>
 
-<pre><code>~/Library/Application Support/Titanium/modules/iphone/com.yakamozlabs.pdftouch/2.6
+<pre><code>~/Library/Application Support/Titanium/modules/iphone/com.yakamozlabs.pdftouch/2.7
 </code></pre>
 
 <p>Once the module is installed you can use it in your Titanium application project. Open your projects' <strong>tiapp.xml</strong> file and add the following lines at the end:</p>
 
 <pre><code>&lt;modules&gt;
-    &lt;module version="2.6"&gt;com.yakamozlabs.pdftouch&lt;/module&gt;
+    &lt;module version="2.7"&gt;com.yakamozlabs.pdftouch&lt;/module&gt;
 &lt;/modules&gt;
 </code></pre>
 
@@ -235,6 +235,14 @@ var document = pdftouch.createPDFDocument(f.nativePath);
 
 <pre><code>var pdftouch = require("com.yakamozlabs.pdftouch");
 pdftouch.setLicenseKey("your-license-key");
+</code></pre>
+
+<h3>pdftouch.setEnterpriseLicenseKey</h3>
+
+<p>Use this function to set the license key if you've purchased the Enterprise license. This function must be called immediately after the initial loading of the PDFTouch module. License keys can be requested from this page: <a href="http://yakamozlabs.com/license-key">http://yakamozlabs.com/license-key</a>.</p>
+
+<pre><code>var pdftouch = require("com.yakamozlabs.pdftouch");
+pdftouch.setEnterpriseLicenseKey("your-license-key", "your-activation-key");
 </code></pre>
 
 <h3>PDF Document Methods</h3>
@@ -493,12 +501,22 @@ if(document.isValidPDF()) {
 </ul>
 
 
+<h4>Release Date: 8/1/2015 - Version: 2.7</h4>
+
+<ul>
+<li>The caching system will now use relative paths instead of the filename to calculate unique UUIDS.</li>
+<li>Bigger thumbnails will be shown on iPhone 6 and iPhone 6 plus devices.</li>
+<li>Removed the top UIToolbar. YLPDFViewController will now use the UINavigationBar of the parent UINavigationController.</li>
+<li>Fixed a small issue that would result in the status bar becoming transparent.</li>
+</ul>
+
+
 <h2>Author</h2>
 
 <p>Yakamoz Labs - info@yakamozlabs.com</p>
 
 <h2>License</h2>
 
-<p>Copyright 2014 Yakamoz Labs. Please refer to the LICENSE file to see the license.</p>
+<p>Copyright 2015 Yakamoz Labs. Please refer to the LICENSE file to see the license.</p>
 </body>
 </html>
