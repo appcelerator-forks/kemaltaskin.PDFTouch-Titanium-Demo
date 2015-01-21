@@ -162,26 +162,26 @@ sup {
 
 <p>PDFTouch SDK offers you a solid framework that's easy to use and customize to your needs. With just a couple of lines of code you can create a PDF view controller and present it in your app! The user interface is very similar to the iBooks app and also features a grid display for page thumbnails.</p>
 
-<p>This module is created with Appcelerator mobile sdk version 2.0.1.GA2. The latest version is built using Appcelerator mobile sdk version 3.4.1GA.</p>
+<p>This module is created with Appcelerator mobile sdk version 2.0.1.GA2. The latest version is built using Appcelerator mobile sdk version 3.5.0GA.</p>
 
 <h2>Installation</h2>
 
 <p>PDFTouch SDK is already built and packaged as a module that you can install right away. If you make any changes to the module code, you will need to repeat the build and install steps.</p>
 
-<p>Copy the com.yakamozlabs.pdftouch-iphone-2.7.zip file to the Titanium directory by running the following line in the terminal:</p>
+<p>Copy the com.yakamozlabs.pdftouch-iphone-2.8.zip file to the Titanium directory by running the following line in the terminal:</p>
 
-<pre><code>$ cp com.yakamozlabs.pdftouch-iphone-2.7.zip ~/Library/Application\ Support/Titanium
+<pre><code>$ cp com.yakamozlabs.pdftouch-iphone-2.8.zip ~/Library/Application\ Support/Titanium
 </code></pre>
 
 <p>The Titanium compiler will automatically expand the module into the correct directory when referenced in your application. The PDFTouch module will be expanded into the following directory:</p>
 
-<pre><code>~/Library/Application Support/Titanium/modules/iphone/com.yakamozlabs.pdftouch/2.7
+<pre><code>~/Library/Application Support/Titanium/modules/iphone/com.yakamozlabs.pdftouch/2.8
 </code></pre>
 
 <p>Once the module is installed you can use it in your Titanium application project. Open your projects' <strong>tiapp.xml</strong> file and add the following lines at the end:</p>
 
 <pre><code>&lt;modules&gt;
-    &lt;module version="2.7"&gt;com.yakamozlabs.pdftouch&lt;/module&gt;
+    &lt;module version="2.8"&gt;com.yakamozlabs.pdftouch&lt;/module&gt;
 &lt;/modules&gt;
 </code></pre>
 
@@ -276,6 +276,8 @@ pdftouch.setEnterpriseLicenseKey("your-license-key", "your-activation-key");
   1 = caching disabled
 </code></pre></li>
 <li><p><strong>setCachingBehavior(behavior)</strong> - Set document caching behavior. The <strong>behavior</strong> parameter should be either 0 or 1. Set this value to 1 if you want to completely disable caching of PDF pages to the filesystem.</p></li>
+<li><strong>preCachingEnabled()</strong> - Returns a bool value indicating wether pre-caching is enabled.</li>
+<li><p><strong>setPreCachingEnabled(enabled)</strong> - Enable or disable pre-caching. Disabling pre-caching for big/complex PDF files will decrease memory usage.</p></li>
 <li><p><strong>display()</strong> - This function will present the PDF view controller as a modal view controller.</p></li>
 <li><strong>showToolbarsAnimated(animated)</strong> - Show toolbars in PDF view controller.</li>
 <li><strong>hideToolbarsAnimated(animated)</strong> - Hide toolbars in PDF view controller.</li>
@@ -508,6 +510,18 @@ if(document.isValidPDF()) {
 <li>Bigger thumbnails will be shown on iPhone 6 and iPhone 6 plus devices.</li>
 <li>Removed the top UIToolbar. YLPDFViewController will now use the UINavigationBar of the parent UINavigationController.</li>
 <li>Fixed a small issue that would result in the status bar becoming transparent.</li>
+</ul>
+
+
+<h4>Release Date: 21/1/2015 - Version: 2.8</h4>
+
+<ul>
+<li>PDFTouch SDK is now built using Appcelerator mobile SDK version 3.5.0GA which supports the 64 bit architecture.</li>
+<li>Fixed “thumbnail view” related bug that resulted in an empty view instead of displaying thumbnails.</li>
+<li>Fixed bar button item bug that would cause a crash when the view was not loaded yet.</li>
+<li>Added new “preCachingEnabled” property to YLDocument. You can enable/disable background off-screen rendering of all pages with this property.</li>
+<li>Removed the multicast YLCacheDelegate and switched to notifications instead.</li>
+<li>Memory usage improvement. This will make a big difference for complex PDF files.</li>
 </ul>
 
 
