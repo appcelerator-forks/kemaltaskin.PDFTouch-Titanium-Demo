@@ -168,20 +168,20 @@ sup {
 
 <p>PDFTouch SDK is already built and packaged as a module that you can install right away. If you make any changes to the module code, you will need to repeat the build and install steps.</p>
 
-<p>Copy the com.yakamozlabs.pdftouch-iphone-2.8.zip file to the Titanium directory by running the following line in the terminal:</p>
+<p>Copy the com.yakamozlabs.pdftouch-iphone-2.8.1.zip file to the Titanium directory by running the following line in the terminal:</p>
 
-<pre><code>$ cp com.yakamozlabs.pdftouch-iphone-2.8.zip ~/Library/Application\ Support/Titanium
+<pre><code>$ cp com.yakamozlabs.pdftouch-iphone-2.8.1.zip ~/Library/Application\ Support/Titanium
 </code></pre>
 
 <p>The Titanium compiler will automatically expand the module into the correct directory when referenced in your application. The PDFTouch module will be expanded into the following directory:</p>
 
-<pre><code>~/Library/Application Support/Titanium/modules/iphone/com.yakamozlabs.pdftouch/2.8
+<pre><code>~/Library/Application Support/Titanium/modules/iphone/com.yakamozlabs.pdftouch/2.8.1
 </code></pre>
 
 <p>Once the module is installed you can use it in your Titanium application project. Open your projects' <strong>tiapp.xml</strong> file and add the following lines at the end:</p>
 
 <pre><code>&lt;modules&gt;
-    &lt;module version="2.8"&gt;com.yakamozlabs.pdftouch&lt;/module&gt;
+    &lt;module version="2.8.1"&gt;com.yakamozlabs.pdftouch&lt;/module&gt;
 &lt;/modules&gt;
 </code></pre>
 
@@ -522,6 +522,13 @@ if(document.isValidPDF()) {
 <li>Added new “preCachingEnabled” property to YLDocument. You can enable/disable background off-screen rendering of all pages with this property.</li>
 <li>Removed the multicast YLCacheDelegate and switched to notifications instead.</li>
 <li>Memory usage improvement. This will make a big difference for complex PDF files.</li>
+</ul>
+
+
+<h4>Release Date: 9/2/2015 - Version: 2.8.1</h4>
+
+<ul>
+<li>Added support for x86_64 architecture which was missing in the previous release.</li>
 </ul>
 
 
