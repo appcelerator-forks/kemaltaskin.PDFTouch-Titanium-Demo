@@ -152,36 +152,36 @@ sup {
 	}
 }
 </style>
-<title>PDFTouch SDK - Appcelerator Module</title>
+<title>PDFTouch Titanium SDK - Appcelerator Module</title>
 
 </head>
 <body>
-<h1>PDFTouch SDK - Appcelerator Module</h1>
+<h1>PDFTouch Titanium SDK - Appcelerator Module</h1>
 
 <h2>Description</h2>
 
-<p>PDFTouch SDK offers you a solid framework that's easy to use and customize to your needs. With just a couple of lines of code you can create a PDF view controller and present it in your app! The user interface is very similar to the iBooks app and also features a grid display for page thumbnails.</p>
+<p>PDFTouch Titanium SDK offers you a solid framework that's easy to use and customize to your needs. With just a couple of lines of code you can create a PDF view controller and present it in your app! The user interface is very similar to the iBooks app and also features a grid display for page thumbnails.</p>
 
-<p>This module is created with Appcelerator mobile sdk version 2.0.1.GA2. The latest version is built using Appcelerator mobile sdk version 3.5.0GA.</p>
+<p>This module is created with Appcelerator mobile sdk version 2.0.1.GA2. The latest version is built using Appcelerator mobile sdk version 4.0.0GA.</p>
 
 <h2>Installation</h2>
 
-<p>PDFTouch SDK is already built and packaged as a module that you can install right away. If you make any changes to the module code, you will need to repeat the build and install steps.</p>
+<p>PDFTouch Titanium SDK is already built and packaged as a module that you can install right away. If you make any changes to the module code, you will need to repeat the build and install steps.</p>
 
-<p>Copy the com.yakamozlabs.pdftouch-iphone-2.8.1.zip file to the Titanium directory by running the following line in the terminal:</p>
+<p>Copy the com.yakamozlabs.pdftouch-iphone-2.9.0.zip file to the Titanium directory by running the following line in the terminal:</p>
 
-<pre><code>$ cp com.yakamozlabs.pdftouch-iphone-2.8.1.zip ~/Library/Application\ Support/Titanium
+<pre><code>$ cp com.yakamozlabs.pdftouch-iphone-2.9.0.zip ~/Library/Application\ Support/Titanium
 </code></pre>
 
 <p>The Titanium compiler will automatically expand the module into the correct directory when referenced in your application. The PDFTouch module will be expanded into the following directory:</p>
 
-<pre><code>~/Library/Application Support/Titanium/modules/iphone/com.yakamozlabs.pdftouch/2.8.1
+<pre><code>~/Library/Application Support/Titanium/modules/iphone/com.yakamozlabs.pdftouch/2.9.0
 </code></pre>
 
 <p>Once the module is installed you can use it in your Titanium application project. Open your projects' <strong>tiapp.xml</strong> file and add the following lines at the end:</p>
 
 <pre><code>&lt;modules&gt;
-    &lt;module version="2.8.1"&gt;com.yakamozlabs.pdftouch&lt;/module&gt;
+    &lt;module version="2.9.0"&gt;com.yakamozlabs.pdftouch&lt;/module&gt;
 &lt;/modules&gt;
 </code></pre>
 
@@ -529,6 +529,19 @@ if(document.isValidPDF()) {
 
 <ul>
 <li>Added support for x86_64 architecture which was missing in the previous release.</li>
+</ul>
+
+
+<h4>Release Date: 2/10/2015 - Version: 2.9</h4>
+
+<ul>
+<li>iOS 9 compatibility.</li>
+<li>PDFTouch SDK is now built with Xcode 7.1, iOS SDK 9.1 and Appcelerator Mobile SDK version 4.0.0GA.</li>
+<li>Fixed small issue where link annotations without the http:// prefix wouldn’t work.</li>
+<li>Fixed a timer related crash in YLThumbnailCell.</li>
+<li>Fixed a memory leak in YLScanner.</li>
+<li>Fixed a corner case issue in YLScrollView where the minimum zoom level would be calculated as “infinity” and cause a crash.</li>
+<li>Fixed PDFTouch.bundle related errors when submitting to iTunes Connect.</li>
 </ul>
 
 
